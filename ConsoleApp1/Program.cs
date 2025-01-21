@@ -51,7 +51,7 @@ await using (var context = new DataContext(dbContextOptions))
 
     Console.WriteLine($"Entity type in new DbContext: {entity.GetType()}");
 
-    entity.LocalNotes = "Should still not be serialized";
+    entity.Name = $"Updated name {DateTime.Now}";
 
     await context.SaveChangesAsync();
 
